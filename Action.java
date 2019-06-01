@@ -1,8 +1,17 @@
 public class Action {
   private String text;
+  private String fin;
   private boolean response;
 
-  public Question(String text) {
+  public Action(String text, String fin) {
+    if((text != null) && (fin != null)) {
+      super(text, fin);
+    }
+
+    this.response = null;
+  }
+
+  public Action(String text) {
     if(text != null) super(text);
 
     this.response = null;
