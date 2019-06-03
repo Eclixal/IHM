@@ -1,3 +1,5 @@
+package tondeuse;
+
 import tondeuse.view.*;
 import java.util.*;
 

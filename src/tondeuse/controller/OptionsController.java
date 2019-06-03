@@ -1,4 +1,6 @@
-package controller;
+package tondeuse.controller;
+
+import tondeuse.view.OptionsView;
 
 public class OptionsController {
   private OptionsView option;

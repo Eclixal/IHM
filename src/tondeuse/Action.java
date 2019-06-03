@@ -1,20 +1,16 @@
-public class Action {
+package tondeuse;
+
+public class Action extends QuestionAction {
   private String text;
   private String fin;
   private boolean response;
 
   public Action(String text, String fin) {
-    if((text != null) && (fin != null)) {
-      super(text, fin);
-    }
-
-    this.response = null;
+    super(text, fin);
   }
 
   public Action(String text) {
-    if(text != null) super(text);
-
-    this.response = null;
+    super(text);
   }
 
   public void setResponse(boolean ret) {

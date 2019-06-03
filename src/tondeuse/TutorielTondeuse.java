@@ -1,4 +1,6 @@
-package tondeuse.model;
+package tondeuse;
+
+import java.util.ArrayList;
 
 public class TutorielTondeuse{
 

@@ -1,3 +1,5 @@
+package tondeuse;
+
 public abstract class QuestionAction {
   protected String text;
   protected String fin;

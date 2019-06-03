@@ -1,15 +1,15 @@
-public class Question {
+package tondeuse;
+
+public class Question extends QuestionAction {
   private String text;
   private String fin;
 
   public Question(String text, String fin) {
-    if((text != null) && (fin != null)) {
-      super(text, fin);
-    }
+    super(text, fin);
   }
 
   public Question(String text) {
-    if(text != null) super(text);
+    super(text);
   }
 
 }
