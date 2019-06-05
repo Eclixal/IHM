@@ -5,7 +5,7 @@ import javax.swing.border.Border;
 import java.awt.font.TextAttribute;
 import java.util.*;
 import java.awt.*;
-
+import tondeuse.controller.MenuController;
 public class MenuView extends JFrame {
 
   private JList<String> tutoriels;
@@ -42,6 +42,7 @@ public class MenuView extends JFrame {
     this.jLabel.setFont(font.deriveFont(attributes));
 
     this.toggleMenu = new JButton("\uF183");
+    this.toggleMenu.addActionListener(new MenuController(this));
     this.toggleMenu.setFont(new Font("Font Awesome 5 Free", Font.PLAIN, 30));
     this.toggleMenu.setBounds(10,10, 35,35);
 
@@ -49,5 +50,9 @@ public class MenuView extends JFrame {
     this.add(jLabel);
 
     this.setVisible(true);
+  }
+
+  public JButton getToggleMenu(){
+    return this.toggleMenu;
   }
 }

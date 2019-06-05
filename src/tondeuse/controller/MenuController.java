@@ -2,6 +2,8 @@ package tondeuse.controller;
 import tondeuse.view.MenuView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import javax.swing.JButton;
+import tondeuse.view.MenuView;
 
 public class MenuController implements ActionListener{
 
@@ -12,6 +14,6 @@ public class MenuController implements ActionListener{
   }
 
   public void actionPerformed(ActionEvent e){
-
+    this.menu.getToggleMenu().setVisible(false);
   }
 }
