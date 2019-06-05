@@ -2,11 +2,11 @@ package tondeuse;
 
 import java.util.ArrayList;
 
-public class TutorielTondeuse{
+public class Tutoriel{
 
   private ArrayList<QuestionAction> list;
 
-  public TutorielTondeuse(){
+  public Tutoriel(){
     this.list = new ArrayList<QuestionAction>();
     initializeList();
   }
