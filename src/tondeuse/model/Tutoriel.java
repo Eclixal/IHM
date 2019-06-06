@@ -5,10 +5,19 @@ import java.util.ArrayList;
 public class Tutoriel{
 
   private ArrayList<QuestionAction> list;
+  private String fileName;
 
-  public Tutoriel(){
+  public Tutoriel(String fileName){
+    if(fileName != null) {
+      this.fileName = fileName;
+    }
+
     this.list = new ArrayList<QuestionAction>();
-    initializeList();
+    this.configure(this.fileName);
+  }
+
+  public void configure(String fileName) {
+    
   }
 
   public QuestionAction getAction(int etape){
@@ -39,12 +48,14 @@ public class Tutoriel{
     }
   }
 
-  private void initializeList(){
+  /* private void initializeList(){
     this.list.add(new Question("L'herbe est-elle déjà coupée ?"));
     this.list.add(new Question("Est-il en train de pleuvoir ?"));
     this.list.add(new Question("L'herbe est-elle mouillée ?"));
     this.list.add(new Action("Sortir la tondeuse du local"));
     this.list.add(new Action("Vérifier le niveau d'essence"));
 
-  }
+  } */
+
+
 }
