@@ -1,72 +1,55 @@
 package tondeuse.model;
 
+import org.json.simple.JSONArray;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+
+import java.io.FileReader;
 import java.util.ArrayList;
 
-public class Tutoriel{
+public class Tutoriel {
 
   private ArrayList<QuestionAction> list;
   private String fileName;
 
   public Tutoriel(String fileName){
-    if(fileName != null) {
+    if(fileName != null)
       this.fileName = fileName;
-    }
 
-    this.list = new ArrayList<QuestionAction>();
+    this.list = new ArrayList<>();
     this.configure(this.fileName);
   }
 
   public void configure(String fileName) {
-//    // parsing file "JSONExample.json"
-//    Object obj = new JSONParser().parse(new FileReader(fileName));
-//
-//    // typecasting obj to JSONObject
-//    JSONObject jo = (JSONObject) obj;
-//
-//    // getting firstName and lastName
-//    String firstName = (String) jo.get("firstName");
-//    String lastName = (String) jo.get("lastName");
-//
-//    System.out.println(firstName);
-//    System.out.println(lastName);
-//
-//    // getting age
-//    long age = (long) jo.get("age");
-//    System.out.println(age);
-//
-//    // getting address
-//    Map address = ((Map)jo.get("address"));
-//
-//    // iterating address Map
-//    Iterator<Map.Entry> itr1 = address.entrySet().iterator();
-//    while (itr1.hasNext()) {
-//        Map.Entry pair = itr1.next();
-//        System.out.println(pair.getKey() + " : " + pair.getValue());
-//    }
-//
-//    // getting phoneNumbers
-//    JSONArray ja = (JSONArray) jo.get("phoneNumbers");
-//
-//    // iterating phoneNumbers
-//    Iterator itr2 = ja.iterator();
-//
-//    while (itr2.hasNext())
-//    {
-//        itr1 = ((Map) itr2.next()).entrySet().iterator();
-//        while (itr1.hasNext()) {
-//            Map.Entry pair = itr1.next();
-//            System.out.println(pair.getKey() + " : " + pair.getValue());
-//        }
-//    }
+    JSONParser parser = new JSONParser();
+
+    try {
+      Object obj = parser.parse(new FileReader(fileName));
+      JSONObject jsonObject = (JSONObject) obj;
+
+      JSONArray questions = (JSONArray) jsonObject.get("questions");
+      for (Object value : questions) {
+        JSONObject question = (JSONObject) value;
+        if (question.get("passerA") != null)
+          list.add(new Question(question.get("text").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("passerA").toString()), Integer.parseInt(question.get("position").toString())));
+        else
+          list.add(new Question(question.get("text").toString(), question.get("fin").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("position").toString())));
+      }
+
+      JSONArray actions = (JSONArray) jsonObject.get("actions");
+      for (Object o : actions) {
+        JSONObject action = (JSONObject) o;
+        list.add(new Action(action.get("text").toString(), action.get("info").toString(), Integer.parseInt(action.get("position").toString())));
+      }
+    } catch (Exception e) {
+      e.printStackTrace();
+    }
   }
 
   public QuestionAction getAction(int etape){
     QuestionAction temp = null;
-
-    if((etape >= 0) && (etape < this.list.size())) {
+    if((etape >= 0) && (etape < this.list.size()))
       temp = this.list.get(etape);
-    }
-
     return temp;
   }
 
@@ -87,15 +70,4 @@ public class Tutoriel{
 
     }
   }
-
-  /* private void initializeList(){
-    this.list.add(new Question("L'herbe est-elle déjà coupée ?"));
-    this.list.add(new Question("Est-il en train de pleuvoir ?"));
-    this.list.add(new Question("L'herbe est-elle mouillée ?"));
-    this.list.add(new Action("Sortir la tondeuse du local"));
-    this.list.add(new Action("Vérifier le niveau d'essence"));
-
-  } */
-
-
 }

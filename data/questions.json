@@ -39,15 +39,15 @@
      "actions": [
          { "position": "4",
            "text": "Sortir la tondeuse du local",
-           "info": null
+           "info": ""
          },
          { "position": "6",
            "text": "Actionnez la pompe d'amorçage 3 fois",
-           "info": null
+           "info": ""
          },
          { "position": "7",
            "text": "Se mettre derrière la tondeuse",
-           "info": null
+           "info": ""
          },
          { "position": "8",
            "text": "Enclencher la poignée de sécurité et tirer sur la corde de démarrage",
@@ -55,23 +55,23 @@
          },
          { "position": "9",
            "text": "Ne pas lâcher la poignée tant que l'on souhaite l'utiliser",
-           "info": null
+           "info": ""
          },
          { "position": "10",
            "text": "Pousser la tondeuse",
-           "info": null
+           "info": ""
          },
          { "position": "11",
            "text": "Rester dans les zones de pelouse",
-           "info": null
+           "info": ""
          },
          { "position": "12",
            "text": "Eviter de repasser plusieurs fois au même endroit",
-           "info": null
+           "info": ""
          },
          { "position": "14",
            "text": "Lâcher la poignée de sécurité",
-           "info": null
+           "info": ""
          },
          { "position": "15",
            "text": "Décrocher le bac",
@@ -87,7 +87,7 @@
          },
          { "position": "20",
            "text": "Remettre la tondeuse dans le local",
-           "info": null
+           "info": ""
          }
      ]
  }

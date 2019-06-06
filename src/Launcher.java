@@ -1,3 +1,4 @@
+import tondeuse.Tondeuse;
 import tondeuse.view.*;
 
 import javax.swing.*;
@@ -21,7 +22,7 @@ public class Launcher {
   }
 
   public static void scenarioTondeuse() {
-    // Tondeuse tondeuse = new Tondeuse();
+    Tondeuse tondeuse = new Tondeuse();
   }
 
 

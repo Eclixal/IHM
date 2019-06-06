@@ -39,7 +39,7 @@ public class MenuView extends JFrame {
 
     this.jLabel = new JLabel("Tutoriels");
     this.jLabel.setFont(new Font("Segoe UI", Font.BOLD, 40));
-    this.jLabel.setBounds((this.getWidth()-165)/2, 10, 165, 40);
+    this.jLabel.setBounds((this.getWidth()-this.jLabel.getPreferredSize().width)/2, 10, this.jLabel.getPreferredSize().width, this.jLabel.getPreferredSize().height);
 
     Font font = this.jLabel.getFont();
     Map<TextAttribute, Object> attributes = new HashMap<>(font.getAttributes());
@@ -55,7 +55,7 @@ public class MenuView extends JFrame {
     this.tondeuse = new JButton(imageTondeuse);
     this.tondeuse.setBorderPainted(false);
     this.tondeuse.setFocusPainted(false);
-    this.tondeuse.setBounds(300,100,200,200);
+    this.tondeuse.setBounds((this.getWidth()-this.tondeuse.getPreferredSize().width)/2,(this.getHeight()-this.tondeuse.getPreferredSize().height)/2,this.tondeuse.getPreferredSize().width,this.tondeuse.getPreferredSize().height);
     this.tondeuse.addActionListener(new MenuController(this));
 
     this.split = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
