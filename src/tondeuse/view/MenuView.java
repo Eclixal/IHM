@@ -51,7 +51,7 @@ public class MenuView extends JFrame {
     this.tondeuse = new JButton(imageTondeuse);
     this.tondeuse.setBorderPainted(false);
     this.tondeuse.setFocusPainted(false);
-    this.tondeuse.setBounds(300,100,200,200);
+    this.tondeuse.setBounds((this.getWidth()-165)/2,100,200,200);
     this.tondeuse.addActionListener(new MenuController(this));
 
     this.add(toggleMenu);
