@@ -2,24 +2,24 @@ package tondeuse.model;
 
 public abstract class QuestionAction {
   protected String text;
-  protected String fin;
+  protected String finOuInfo;
 
-  public QuestionAction(String text, String fin) {
-    if((text != null) && (fin != null)) {
+  public QuestionAction(String text, String finOuInfo) {
+    if((text != null) && (finOuInfo != null)) {
       this.text = text;
-      this.fin = fin;
+      this.finOuInfo = finOuInfo;
     }
   }
 
   public QuestionAction(String text) {
     if(text != null) {
       this.text = text;
-      this.fin = "";
+      this.finOuInfo = "";
     }
   }
 
-  public String getFin() {
-    return this.fin;
+  public String getFinOuInfo() {
+    return this.finOuInfo;
   }
 
   public String toString() {

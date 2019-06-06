@@ -15,7 +15,7 @@ public class Question extends QuestionAction {
   }
 
   public Question(String text, boolean finDuTuto, int passerA) {
-    super(text, fin);
+    super(text);
 
     if(passerA > 0) {
       this.passerA = passerA;
