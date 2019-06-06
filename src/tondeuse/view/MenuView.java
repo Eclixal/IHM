@@ -47,10 +47,12 @@ public class MenuView extends JFrame {
     this.toggleMenu.setFont(new Font("Font Awesome 5 Free", Font.PLAIN, 30));
     this.toggleMenu.setBounds(10,10, 35,35);
 
-    ImageIcon imageTondeuse = new ImageIcon(new ImageIcon("../images/tondeuse.jpg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+    ImageIcon imageTondeuse = new ImageIcon(new ImageIcon("../image/tondeuse.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
     this.tondeuse = new JButton(imageTondeuse);
+    this.tondeuse.setBorderPainted(false);
     this.tondeuse.setFocusPainted(false);
-    this.tondeuse.setBounds(200,200,200,200);
+    this.tondeuse.setBounds(300,100,200,200);
+    this.tondeuse.addActionListener(new MenuController(this));
 
     this.add(toggleMenu);
     this.add(jLabel);
@@ -61,9 +63,5 @@ public class MenuView extends JFrame {
 
   public JButton getToggleMenu(){
     return this.toggleMenu;
-  }
-
-  public JFrame getFrame() {
-    return this;
   }
 }
