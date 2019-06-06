@@ -9,9 +9,7 @@ public class Question extends QuestionAction {
   public Question(String text, String fin, boolean finDuTuto) {
     super(text, fin);
 
-    if(finDuTuto != null) {
-      this.finDuTuto = finDuTuto;
-    }
+    this.finDuTuto = finDuTuto;
   }
 
   public Question(String text, boolean finDuTuto, int passerA) {
