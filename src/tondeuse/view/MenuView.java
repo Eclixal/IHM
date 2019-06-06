@@ -6,12 +6,16 @@ import java.awt.font.TextAttribute;
 import java.util.*;
 import java.awt.*;
 import tondeuse.controller.MenuController;
+import java.awt.FlowLayout;
+import java.awt.Dimension;
+
 public class MenuView extends JFrame {
 
   private JList<String> tutoriels;
   private JButton toggleMenu;
   private JLabel jLabel;
   private JButton tondeuse;
+  private JSplitPane split;
 
   public MenuView() {
     this.setTitle("Tondeuse");
@@ -47,16 +51,48 @@ public class MenuView extends JFrame {
     this.toggleMenu.setFont(new Font("Font Awesome 5 Free", Font.PLAIN, 30));
     this.toggleMenu.setBounds(10,10, 35,35);
 
-    ImageIcon imageTondeuse = new ImageIcon(new ImageIcon("image/tondeuse.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+    ImageIcon imageTondeuse = new ImageIcon(new ImageIcon("../image/tondeuse.png").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
     this.tondeuse = new JButton(imageTondeuse);
     this.tondeuse.setBorderPainted(false);
     this.tondeuse.setFocusPainted(false);
-    this.tondeuse.setBounds((this.getWidth()-165)/2,100,200,200);
+    this.tondeuse.setBounds(300,100,200,200);
     this.tondeuse.addActionListener(new MenuController(this));
+
+    this.split = new JSplitPane(JSplitPane.VERTICAL_SPLIT);
+    JButton tutoriels = new JButton("Tutoriels");
+    tutoriels.setPreferredSize(new Dimension(150,35));
+    JButton parametres = new JButton("Paramètres");
+    parametres.setPreferredSize(new Dimension(150,35));
+    JButton retour = new JButton("Retour");
+    retour.setPreferredSize(new Dimension(150,35));
+    JButton quitter = new JButton("Quitter");
+    quitter.setPreferredSize(new Dimension(150,35));
+    JPanel panel1 = new JPanel();
+    FlowLayout flow1 = new FlowLayout();
+    panel1.setLayout(flow1);
+    panel1.add(tutoriels);
+    panel1.add(parametres);
+    panel1.add(retour);
+    panel1.add(quitter);
+    split.setLeftComponent(panel1);
+    JButton contact = new JButton("Contact");
+    contact.setPreferredSize(new Dimension(150,30));
+    JButton aPropos = new JButton("A propos");
+    aPropos.setPreferredSize(new Dimension(150,30));
+    JPanel panel2 = new JPanel();
+    FlowLayout flow2 = new FlowLayout();
+    panel2.setLayout(flow2);
+    panel2.add(contact);
+    panel2.add(aPropos);
+    split.setRightComponent(panel2);
+    this.split.setBounds(10,50,200,310);
+    this.split.setDividerLocation(0.60);
+    this.split.setVisible(false);
 
     this.add(toggleMenu);
     this.add(jLabel);
     this.add(tondeuse);
+    this.add(split);
 
     this.setVisible(true);
   }
@@ -64,4 +100,9 @@ public class MenuView extends JFrame {
   public JButton getToggleMenu(){
     return this.toggleMenu;
   }
+
+  public JSplitPane getSplit(){
+    return this.split;
+  }
 }
+
