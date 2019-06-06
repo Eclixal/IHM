@@ -29,9 +29,9 @@ public class MenuView extends JFrame {
 
     this.getContentPane().setBackground(Color.decode("#E6E6E6"));
 
-    this.setPreferredSize(new Dimension(1200, 800));
-    this.setMinimumSize(new Dimension(1200, 800));
-    this.setMaximumSize(new Dimension(1200, 800));
+    this.setPreferredSize(new Dimension(800, 400));
+    this.setMinimumSize(new Dimension(800, 400));
+    this.setMaximumSize(new Dimension(800, 400));
 
     this.jLabel = new JLabel("Tutoriels");
     this.jLabel.setFont(new Font("Segoe UI", Font.BOLD, 40));
