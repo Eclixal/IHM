@@ -1,7 +1,5 @@
 package tondeuse.model;
 
-import tondeuse.QuestionAction;
-
 public class Question extends QuestionAction {
   private String text;
   private String fin;

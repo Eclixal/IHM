@@ -1,8 +1,5 @@
 package tondeuse.model;
 
-import tondeuse.Question;
-import tondeuse.QuestionAction;
-
 import java.util.ArrayList;
 
 public class Tutoriel{
