@@ -1,4 +1,6 @@
-package tondeuse;
+package tondeuse.model;
+
+import tondeuse.QuestionAction;
 
 public class Question extends QuestionAction {
   private String text;

@@ -1,4 +1,4 @@
-package tondeuse;
+package tondeuse.model;
 
 public abstract class QuestionAction {
   protected String text;

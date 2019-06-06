@@ -1,10 +1,12 @@
 package tondeuse;
 
-public class Tondeuse{
+import tondeuse.model.Tutoriel;
 
-  private TutorielTondeuse tuto;
+public class Tondeuse {
 
-  public Tondeuse(){
-    tuto = new TutorielTondeuse();
+  private Tutoriel tutoriel;
+
+  public Tondeuse() {
+    tutoriel = new Tutoriel();
   }
 }
