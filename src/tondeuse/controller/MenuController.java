@@ -3,6 +3,7 @@ import tondeuse.view.MenuView;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 import tondeuse.view.OptionsView;
+import tondeuse.view.TutorielView;
 
 public class MenuController implements ActionListener{
 
