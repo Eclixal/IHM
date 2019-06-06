@@ -72,7 +72,7 @@ public class Tutoriel{
 
   public void interpreterFin(int etape) {
     if((etape >= 0) && (etape < this.list.size())) {
-      String temp = this.list.get(etape).getFin();
+      String temp = this.list.get(etape).getFinOuInfo();
 
       if(temp.equalsIgnoreCase("fin")) {
 

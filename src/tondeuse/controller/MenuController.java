@@ -1,5 +1,8 @@
 package tondeuse.controller;
+import tondeuse.view.FinView;
 import tondeuse.view.MenuView;
+import tondeuse.view.TutorielView;
+
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
