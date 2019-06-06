@@ -23,54 +23,78 @@
            "fin": "Revenez quand l'herbe ne sera plus mouillée.",
            "finDuTuto": true
          },
-         { "position": "3",
+         { "position": "5",
            "text": "Reste t-il de l'essence dans la tondeuse ?",
            "fin": "Remettre de l'essence dans la tondeuse.",
            "finDuTuto": false
          },
-         { "position": "3",
+         { "position": "12",
            "text": "Le bac est-il plein ?",
-           "fin": "",
            "finDuTuto": false,
            "passerA": ""
          },
-         { "position": "3",
-           "text": "",
+         { "position": "",
+           "text": "L'herbe est-elle coupée ?",
            "fin": "",
+           "finDuTuto": false
+         },
+         { "position": "",
+           "text": "La tondeuse est-elle sale ?",
+           "fin": "Pencher la tondeuse, et nettoyer le dessous avec un jet d'eau.",
            "finDuTuto": false
          }
      ],
      "actions": [
-         { "position": "1",
+         { "position": "4",
            "text": "Sortir la tondeuse du local",
            "info": null
          },
-         { "position": "3",
+         { "position": "6",
            "text": "Actionnez la pompe d'amorçage 3 fois",
            "info": null
          },
-         { "position": "4",
+         { "position": "7",
            "text": "Se mettre derrière la tondeuse",
            "info": null
          },
-         { "position": "5",
+         { "position": "8",
            "text": "Enclencher la poignée de sécurité et tirer sur la corde de démarrage",
            "info": "Si elle ne démarre pas, refaire l'action."
          },
-         { "position": "5",
+         { "position": "9",
            "text": "Ne pas lâcher la poignée tant que l'on souhaite l'utiliser",
            "info": null
          },
-         { "position": "5",
+         { "position": "10",
            "text": "Pousser la tondeuse",
            "info": null
          },
-         { "position": "5",
+         { "position": "11",
            "text": "Rester dans les zones de pelouse",
            "info": null
          },
-         { "position": "5",
+         { "position": "12",
            "text": "Eviter de repasser plusieurs fois au même endroit",
+           "info": null
+         },
+         { "position": "",
+           "text": "Lâcher la poignée de sécurité",
+           "info": null
+         },
+         { "position": "",
+           "text": "Décrocher le bac",
+           "info": "La tondeuse doit avoir le moteur coupé"
+         },
+         { "position": "",
+           "text": "Vider le bac dans la zone de compost",
+           "info": "La tondeuse doit avoir le moteur coupé"
+         },
+         { "position": "",
+           "text": "Remettre le bac sur la tondeuse",
+           "info": "La tondeuse doit avoir le moteur coupé"
+         },
+         { "position": "",
+           "text": "Remettre la tondeuse dans le local",
            "info": null
          }
      ]
