@@ -12,6 +12,12 @@ public class MenuController implements ActionListener{
   }
 
   public void actionPerformed(ActionEvent e){
-    this.menu.getToggleMenu().setVisible(false);
+    if(e.getSource() == this.menu.getToggleMenu()){
+      this.menu.getToggleMenu().setVisible(false);
+    }
+    else{
+      this.menu.dispose();
+      new TutorielView();
+    }
   }
 }
