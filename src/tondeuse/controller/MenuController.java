@@ -1,10 +1,8 @@
 package tondeuse.controller;
-import tondeuse.view.FinView;
 import tondeuse.view.MenuView;
-import tondeuse.view.TutorielView;
-
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
+import tondeuse.view.OptionsView;
 
 public class MenuController implements ActionListener{
 
@@ -16,7 +14,12 @@ public class MenuController implements ActionListener{
 
   public void actionPerformed(ActionEvent e){
     if(e.getSource() == this.menu.getToggleMenu()){
-      this.menu.getToggleMenu().setVisible(false);
+      if(!this.menu.getSplit().isVisible()){
+        this.menu.getSplit().setVisible(true);
+      }
+      else{
+        this.menu.getSplit().setVisible(false);
+      }
     }
     else{
       this.menu.dispose();
