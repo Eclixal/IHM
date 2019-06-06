@@ -1,0 +1,77 @@
+{
+
+     "firstName": "John", "lastName": "Smith", "age": 25,
+     "address" : {
+         "streetAddress": "21 2nd Street",
+         "city": "New York",
+         "state": "NY",
+         "postalCode": "10021"
+     },
+     "questions": [
+         { "position": "1",
+           "text": "L'herbe est-elle déjà coupée ?",
+           "fin": "Il n'est donc pas nécessaire de tondre la pelouse.",
+           "finDuTuto": true
+         },
+         { "position": "2",
+           "text": "Est-il en train de pleuvoir ?",
+           "fin": "Revenez quand la pluie aura cessé.",
+           "finDuTuto": true
+         },
+         { "position": "3",
+           "text": "L'herbe est-elle mouillée ?",
+           "fin": "Revenez quand l'herbe ne sera plus mouillée.",
+           "finDuTuto": true
+         },
+         { "position": "3",
+           "text": "Reste t-il de l'essence dans la tondeuse ?",
+           "fin": "Remettre de l'essence dans la tondeuse.",
+           "finDuTuto": false
+         },
+         { "position": "3",
+           "text": "Le bac est-il plein ?",
+           "fin": "",
+           "finDuTuto": false,
+           "passerA": ""
+         },
+         { "position": "3",
+           "text": "",
+           "fin": "",
+           "finDuTuto": false
+         }
+     ],
+     "actions": [
+         { "position": "1",
+           "text": "Sortir la tondeuse du local",
+           "info": null
+         },
+         { "position": "3",
+           "text": "Actionnez la pompe d'amorçage 3 fois",
+           "info": null
+         },
+         { "position": "4",
+           "text": "Se mettre derrière la tondeuse",
+           "info": null
+         },
+         { "position": "5",
+           "text": "Enclencher la poignée de sécurité et tirer sur la corde de démarrage",
+           "info": "Si elle ne démarre pas, refaire l'action."
+         },
+         { "position": "5",
+           "text": "Ne pas lâcher la poignée tant que l'on souhaite l'utiliser",
+           "info": null
+         },
+         { "position": "5",
+           "text": "Pousser la tondeuse",
+           "info": null
+         },
+         { "position": "5",
+           "text": "Rester dans les zones de pelouse",
+           "info": null
+         },
+         { "position": "5",
+           "text": "Eviter de repasser plusieurs fois au même endroit",
+           "info": null
+         }
+     ]
+ }
