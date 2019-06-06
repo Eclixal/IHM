@@ -62,4 +62,8 @@ public class MenuView extends JFrame {
   public JButton getToggleMenu(){
     return this.toggleMenu;
   }
+
+  public JFrame getFrame() {
+    return this;
+  }
 }
