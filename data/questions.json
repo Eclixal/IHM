@@ -1,12 +1,4 @@
 {
-
-     "firstName": "John", "lastName": "Smith", "age": 25,
-     "address" : {
-         "streetAddress": "21 2nd Street",
-         "city": "New York",
-         "state": "NY",
-         "postalCode": "10021"
-     },
      "questions": [
          { "position": "1",
            "text": "L'herbe est-elle déjà coupée ?",
@@ -28,17 +20,17 @@
            "fin": "Remettre de l'essence dans la tondeuse.",
            "finDuTuto": false
          },
-         { "position": "12",
+         { "position": "13",
            "text": "Le bac est-il plein ?",
            "finDuTuto": false,
-           "passerA": ""
+           "passerA": "9"
          },
-         { "position": "",
-           "text": "L'herbe est-elle coupée ?",
-           "fin": "",
-           "finDuTuto": false
+         { "position": "18",
+           "text": "Reste t-il de l'herbe à couper ?",
+           "finDuTuto": false,
+           "passerA": "9"
          },
-         { "position": "",
+         { "position": "19",
            "text": "La tondeuse est-elle sale ?",
            "fin": "Pencher la tondeuse, et nettoyer le dessous avec un jet d'eau.",
            "finDuTuto": false
@@ -77,23 +69,23 @@
            "text": "Eviter de repasser plusieurs fois au même endroit",
            "info": null
          },
-         { "position": "",
+         { "position": "14",
            "text": "Lâcher la poignée de sécurité",
            "info": null
          },
-         { "position": "",
+         { "position": "15",
            "text": "Décrocher le bac",
            "info": "La tondeuse doit avoir le moteur coupé"
          },
-         { "position": "",
+         { "position": "16",
            "text": "Vider le bac dans la zone de compost",
            "info": "La tondeuse doit avoir le moteur coupé"
          },
-         { "position": "",
+         { "position": "17",
            "text": "Remettre le bac sur la tondeuse",
            "info": "La tondeuse doit avoir le moteur coupé"
          },
-         { "position": "",
+         { "position": "20",
            "text": "Remettre la tondeuse dans le local",
            "info": null
          }
