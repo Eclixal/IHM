@@ -1,6 +1,7 @@
 package tondeuse.view;
 
 import javax.swing.*;
+import javax.swing.border.Border;
 import java.awt.font.TextAttribute;
 import java.util.*;
 import java.awt.*;
@@ -10,6 +11,7 @@ public class MenuView extends JFrame {
   private JList<String> tutoriels;
   private JButton toggleMenu;
   private JLabel jLabel;
+  private JButton tondeuse;
 
   public MenuView() {
     this.setTitle("Tondeuse");
@@ -27,9 +29,9 @@ public class MenuView extends JFrame {
 
     this.getContentPane().setBackground(Color.decode("#E6E6E6"));
 
-    this.setPreferredSize(new Dimension(800, 400));
-    this.setMinimumSize(new Dimension(800, 400));
-    this.setMaximumSize(new Dimension(800, 400));
+    this.setPreferredSize(new Dimension(1200, 800));
+    this.setMinimumSize(new Dimension(1200, 800));
+    this.setMaximumSize(new Dimension(1200, 800));
 
     this.jLabel = new JLabel("Tutoriels");
     this.jLabel.setFont(new Font("Segoe UI", Font.BOLD, 40));
@@ -45,8 +47,14 @@ public class MenuView extends JFrame {
     this.toggleMenu.setFont(new Font("Font Awesome 5 Free", Font.PLAIN, 30));
     this.toggleMenu.setBounds(10,10, 35,35);
 
+    ImageIcon imageTondeuse = new ImageIcon(new ImageIcon("../images/tondeuse.jpg").getImage().getScaledInstance(200, 200, Image.SCALE_DEFAULT));
+    this.tondeuse = new JButton(imageTondeuse);
+    this.tondeuse.setFocusPainted(false);
+    this.tondeuse.setBounds(200,200,200,200);
+
     this.add(toggleMenu);
     this.add(jLabel);
+    this.add(tondeuse);
 
     this.setVisible(true);
   }
