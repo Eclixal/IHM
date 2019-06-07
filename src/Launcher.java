@@ -17,13 +17,5 @@ public class Launcher {
         new MenuView();
       }
     });
-
-    scenarioTondeuse();
   }
-
-  public static void scenarioTondeuse() {
-    Tondeuse tondeuse = new Tondeuse();
-  }
-
-
 }

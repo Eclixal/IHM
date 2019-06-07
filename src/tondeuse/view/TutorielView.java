@@ -1,7 +1,10 @@
 package tondeuse.view;
 
+import tondeuse.Tondeuse;
 import tondeuse.button.JTexturedButton;
 import tondeuse.button.JTexturedWhiteButton;
+import tondeuse.controller.TutorielController;
+import tondeuse.model.Question;
 
 import javax.swing.*;
 import java.awt.*;
@@ -18,7 +21,10 @@ public class TutorielView extends JFrame {
     private JTexturedWhiteButton jTexturedWhiteButtonNo;
     private JTexturedButton jTexturedButtonAction;
 
-    public TutorielView() {
+    private Tondeuse tondeuse;
+
+    public TutorielView(Tondeuse tondeuse) {
+        this.tondeuse = tondeuse;
         this.setTitle("Tondeuse");
         this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 
@@ -50,24 +56,34 @@ public class TutorielView extends JFrame {
         this.jLabelEtape.setFont(new Font("Segoe UI", Font.BOLD, 40));
         this.jLabelEtape.setBounds((this.getWidth()-this.jLabelEtape.getPreferredSize().width)/2, 50, this.jLabelEtape.getPreferredSize().width, this.jLabelEtape.getPreferredSize().height);
 
-        this.jLabelEtapeNumber = new JLabel("Etape 1");
+        this.jLabelEtapeNumber = new JLabel("Etape " + tondeuse.getTutoriel().getAction(tondeuse.getEtape()).getPosition());
         this.jLabelEtapeNumber.setForeground(Color.decode("#707070"));
         this.jLabelEtapeNumber.setFont(new Font("Segoe UI", Font.ITALIC, 20));
         this.jLabelEtapeNumber.setBounds((this.getWidth()-this.jLabelEtapeNumber.getPreferredSize().width)/2, 110, this.jLabelEtapeNumber.getPreferredSize().width, this.jLabelEtapeNumber.getPreferredSize().height);
 
-        this.jLabelQuestion = new JLabel("Il fait beau dehors ?");
+        this.jLabelQuestion = new JLabel(tondeuse.getTutoriel().getAction(tondeuse.getEtape()).getText());
         this.jLabelQuestion.setForeground(Color.decode("#707070"));
         this.jLabelQuestion.setFont(new Font("Segoe UI", Font.PLAIN, 40));
         this.jLabelQuestion.setBounds((this.getWidth()-this.jLabelQuestion.getPreferredSize().width)/2, (this.getHeight()-this.jLabelQuestion.getPreferredSize().height)/2-80, this.jLabelQuestion.getPreferredSize().width, this.jLabelQuestion.getPreferredSize().height);
 
-        this.jTexturedWhiteButtonYes = new JTexturedWhiteButton("Oui", "image/buttonwhite.png", "image/buttonwhitehover.png");
-        this.jTexturedWhiteButtonYes.setBounds((this.getWidth()-150)/2-120, (this.getHeight()-this.jTexturedWhiteButtonYes.getPreferredSize().height)/2+30, 150, this.jTexturedWhiteButtonYes.getPreferredSize().height);
+        if (tondeuse.getTutoriel().getAction(tondeuse.getEtape()) instanceof Question) {
+            this.jTexturedWhiteButtonYes = new JTexturedWhiteButton("Oui", "image/buttonwhite.png", "image/buttonwhitehover.png");
+            this.jTexturedWhiteButtonYes.setBounds((this.getWidth()-150)/2-120, (this.getHeight()-this.jTexturedWhiteButtonYes.getPreferredSize().height)/2+30, 150, this.jTexturedWhiteButtonYes.getPreferredSize().height);
+            this.jTexturedWhiteButtonYes.addActionListener(new TutorielController(this));
 
-        this.jTexturedWhiteButtonNo = new JTexturedWhiteButton("Non", "image/buttonwhite.png", "image/buttonwhitehover.png");
-        this.jTexturedWhiteButtonNo.setBounds((this.getWidth()-150)/2+120, (this.getHeight()-this.jTexturedWhiteButtonNo.getPreferredSize().height)/2+30, 150, this.jTexturedWhiteButtonNo.getPreferredSize().height);
+            this.jTexturedWhiteButtonNo = new JTexturedWhiteButton("Non", "image/buttonwhite.png", "image/buttonwhitehover.png");
+            this.jTexturedWhiteButtonNo.setBounds((this.getWidth()-150)/2+120, (this.getHeight()-this.jTexturedWhiteButtonNo.getPreferredSize().height)/2+30, 150, this.jTexturedWhiteButtonNo.getPreferredSize().height);
+            this.jTexturedWhiteButtonNo.addActionListener(new TutorielController(this));
 
-        this.jTexturedButtonAction = new JTexturedButton("C'est fait !", "image/button.png", "image/buttonhover.png");
-        this.jTexturedButtonAction.setBounds((this.getWidth()-150)/2, (this.getHeight()-this.jTexturedButtonAction.getPreferredSize().height)/2+100, 150, this.jTexturedButtonAction.getPreferredSize().height);
+            this.add(this.jTexturedWhiteButtonYes);
+            this.add(this.jTexturedWhiteButtonNo);
+        } else {
+            this.jTexturedButtonAction = new JTexturedButton("C'est fait !", "image/button.png", "image/buttonhover.png");
+            this.jTexturedButtonAction.setBounds((this.getWidth()-150)/2, (this.getHeight()-this.jTexturedButtonAction.getPreferredSize().height)/2+30, 150, this.jTexturedButtonAction.getPreferredSize().height);
+            this.jTexturedButtonAction.addActionListener(new TutorielController(this));
+
+            this.add(this.jTexturedButtonAction);
+        }
 
         this.add(this.jButtonClose);
         this.add(this.jProgressBar);
@@ -75,11 +91,22 @@ public class TutorielView extends JFrame {
         this.add(this.jLabelEtapeNumber);
         this.add(this.jLabelQuestion);
 
-        this.add(this.jTexturedWhiteButtonYes);
-        this.add(this.jTexturedWhiteButtonNo);
-//        this.add(this.jTexturedButtonAction);
-
         this.setVisible(true);
     }
 
+    public JTexturedWhiteButton getjTexturedWhiteButtonYes() {
+        return jTexturedWhiteButtonYes;
+    }
+
+    public JTexturedWhiteButton getjTexturedWhiteButtonNo() {
+        return jTexturedWhiteButtonNo;
+    }
+
+    public JTexturedButton getjTexturedButtonAction() {
+        return jTexturedButtonAction;
+    }
+
+    public Tondeuse getTondeuse() {
+        return tondeuse;
+    }
 }
