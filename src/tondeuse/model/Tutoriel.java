@@ -31,43 +31,27 @@ public class Tutoriel {
       for (Object value : questions) {
         JSONObject question = (JSONObject) value;
         if (question.get("passerA") != null)
-          list.add(new Question(question.get("text").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("passerA").toString()), Integer.parseInt(question.get("position").toString())));
+          list.add(Integer.parseInt(question.get("position").toString()) - 1, new Question(question.get("text").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("passerA").toString())));
         else
-          list.add(new Question(question.get("text").toString(), question.get("fin").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("position").toString())));
+          list.add(Integer.parseInt(question.get("position").toString()) - 1, new Question(question.get("text").toString(), question.get("fin").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString())));
       }
 
       JSONArray actions = (JSONArray) jsonObject.get("actions");
       for (Object o : actions) {
         JSONObject action = (JSONObject) o;
-        list.add(new Action(action.get("text").toString(), action.get("info").toString(), Integer.parseInt(action.get("position").toString())));
+        list.add(Integer.parseInt(action.get("position").toString()) - 1, new Action(action.get("text").toString(), action.get("info").toString()));
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
   }
 
-  public QuestionAction getAction(int etape){
+  public QuestionAction getActionOrQuestion(int etape){
     QuestionAction temp = null;
+
     if((etape >= 0) && (etape < this.list.size()))
       temp = this.list.get(etape);
+
     return temp;
-  }
-
-  public void interpreterFin(int etape) {
-    if((etape >= 0) && (etape < this.list.size())) {
-      String temp = this.list.get(etape).getFinOuInfo();
-
-      if(temp.equalsIgnoreCase("fin")) {
-
-      }
-
-      else if(temp.equalsIgnoreCase("remettre")) {
-
-      }
-      else if(temp.equalsIgnoreCase("remettre")) {
-
-      }
-
-    }
   }
 }
