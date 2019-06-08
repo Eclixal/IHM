@@ -8,7 +8,7 @@ public class Tondeuse {
   private int etape;
 
   public Tondeuse() {
-    this.tutoriel = new Tutoriel("data/questions.json");
+    this.tutoriel = new Tutoriel("../data/questions.json");
     this.etape = 0;
   }
 
