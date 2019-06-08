@@ -20,7 +20,7 @@ public class TutorielController implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         int action = tutorielView.getTondeuse().getEtape();
-        QuestionAction questionAction = tutorielView.getTondeuse().getTutoriel().getAction(action);
+        QuestionAction questionAction = tutorielView.getTondeuse().getTutoriel().getActionOrQuestion(action);
         if (e.getSource() == this.tutorielView.getjTexturedWhiteButtonYes()) {
             if (questionAction instanceof Question) {
                 Question question = (Question) questionAction;

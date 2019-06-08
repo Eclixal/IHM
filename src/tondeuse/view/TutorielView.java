@@ -56,17 +56,17 @@ public class TutorielView extends JFrame {
         this.jLabelEtape.setFont(new Font("Segoe UI", Font.BOLD, 40));
         this.jLabelEtape.setBounds((this.getWidth()-this.jLabelEtape.getPreferredSize().width)/2, 50, this.jLabelEtape.getPreferredSize().width, this.jLabelEtape.getPreferredSize().height);
 
-        this.jLabelEtapeNumber = new JLabel("Etape " + tondeuse.getTutoriel().getAction(tondeuse.getEtape()).getPosition());
+        this.jLabelEtapeNumber = new JLabel("Etape " + tondeuse.getTutoriel().getActionOrQuestion(tondeuse.getEtape()).getPosition());
         this.jLabelEtapeNumber.setForeground(Color.decode("#707070"));
         this.jLabelEtapeNumber.setFont(new Font("Segoe UI", Font.ITALIC, 20));
         this.jLabelEtapeNumber.setBounds((this.getWidth()-this.jLabelEtapeNumber.getPreferredSize().width)/2, 110, this.jLabelEtapeNumber.getPreferredSize().width, this.jLabelEtapeNumber.getPreferredSize().height);
 
-        this.jLabelQuestion = new JLabel(tondeuse.getTutoriel().getAction(tondeuse.getEtape()).getText());
+        this.jLabelQuestion = new JLabel(tondeuse.getTutoriel().getActionOrQuestion(tondeuse.getEtape()).getText());
         this.jLabelQuestion.setForeground(Color.decode("#707070"));
         this.jLabelQuestion.setFont(new Font("Segoe UI", Font.PLAIN, 40));
         this.jLabelQuestion.setBounds((this.getWidth()-this.jLabelQuestion.getPreferredSize().width)/2, (this.getHeight()-this.jLabelQuestion.getPreferredSize().height)/2-80, this.jLabelQuestion.getPreferredSize().width, this.jLabelQuestion.getPreferredSize().height);
 
-        if (tondeuse.getTutoriel().getAction(tondeuse.getEtape()) instanceof Question) {
+        if (tondeuse.getTutoriel().getActionOrQuestion(tondeuse.getEtape()) instanceof Question) {
             this.jTexturedWhiteButtonYes = new JTexturedWhiteButton("Oui", "image/buttonwhite.png", "image/buttonwhitehover.png");
             this.jTexturedWhiteButtonYes.setBounds((this.getWidth()-150)/2-120, (this.getHeight()-this.jTexturedWhiteButtonYes.getPreferredSize().height)/2+30, 150, this.jTexturedWhiteButtonYes.getPreferredSize().height);
             this.jTexturedWhiteButtonYes.addActionListener(new TutorielController(this));
