@@ -4,7 +4,7 @@ import org.json.simple.JSONArray;
 import org.json.simple.JSONObject;
 import org.json.simple.parser.JSONParser;
 
-import java.io.FileReader;
+import java.io.*;
 import java.util.ArrayList;
 import java.util.Collections;
 
@@ -25,7 +25,7 @@ public class Tutoriel {
     JSONParser parser = new JSONParser();
 
     try {
-      Object obj = parser.parse(new FileReader(fileName));
+      Object obj = parser.parse(new BufferedReader(new FileReader(fileName)));
       JSONObject jsonObject = (JSONObject) obj;
 
       JSONArray questions = (JSONArray) jsonObject.get("questions");

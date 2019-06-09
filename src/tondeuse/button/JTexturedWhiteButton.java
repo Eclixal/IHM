@@ -20,7 +20,7 @@ public class JTexturedWhiteButton extends JButton {
         setHorizontalAlignment(SwingConstants.CENTER);
         setHorizontalTextPosition(SwingConstants.CENTER);
 
-        setIcon(new ImageIcon(icon));
-        setRolloverIcon(new ImageIcon(iconHover));
+        setIcon(new ImageIcon(getClass().getClassLoader().getResource(icon)));
+        setRolloverIcon(new ImageIcon(getClass().getClassLoader().getResource(iconHover)));
     }
 }

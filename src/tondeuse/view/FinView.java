@@ -35,8 +35,8 @@ public class FinView extends JFrame {
 
         this.jLabelMessage = new JLabel(successText);
         this.jLabelSuccess = new JLabel("Félicitations, vous avez fini le tutoriel !");
-        this.jButtonMenu = new JTexturedButton("Retour au menu", "../image/button.png", "../image/buttonhover.png");
-        this.jButtonLeave = new JTexturedButton("Quitter", "../image/button.png", "../image/buttonhover.png");
+        this.jButtonMenu = new JTexturedButton("Retour au menu", "image/button.png", "image/buttonhover.png");
+        this.jButtonLeave = new JTexturedButton("Quitter", "image/button.png", "image/buttonhover.png");
         this.jButtonMenu.addActionListener(new FinController(this));
         this.jButtonLeave.addActionListener(new FinController(this));
 
