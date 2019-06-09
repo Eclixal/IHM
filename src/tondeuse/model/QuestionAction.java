@@ -17,20 +17,6 @@ public abstract class QuestionAction {
     }
   }
 
-  public QuestionAction(String text, String finOuInfo) {
-    if((text != null) && (finOuInfo != null)) {
-      this.text = text;
-      this.finOuInfo = finOuInfo;
-    }
-  }
-
-  public QuestionAction(String text) {
-    if(text != null) {
-      this.text = text;
-      this.finOuInfo = "";
-    }
-  }
-
   public String getFinOuInfo() {
     return this.finOuInfo;
   }
