@@ -85,7 +85,7 @@ public class TutorielView extends JFrame {
             this.add(this.jTexturedButtonAction);
         }
 
-        this.jProgressBar.setValue((int)((tondeuse.getEtape()+1) * 20)); //this.tondeuse.getTutoriel().getList().size());
+        this.jProgressBar.setValue((int)(((tondeuse.getEtape()+1)*100) / 20)); //this.tondeuse.getTutoriel().getList().size());
 
         this.add(this.jButtonClose);
         this.add(this.jProgressBar);
@@ -137,7 +137,7 @@ public class TutorielView extends JFrame {
                 this.add(this.jTexturedButtonAction);
             }
         }
-        this.jProgressBar.setValue((int)((tondeuse.getEtape()+1) * 20));
+        this.jProgressBar.setValue((int)(((tondeuse.getEtape()+1)*100) / 20));
     }
 
     public JTexturedWhiteButton getjTexturedWhiteButtonYes() {
