@@ -18,6 +18,7 @@ public class MenuController implements ActionListener{
       if(!this.menu.getSplit().isVisible()){
         this.menu.getSplit().setVisible(true);
       }
+      
       else{
         this.menu.getSplit().setVisible(false);
       }
