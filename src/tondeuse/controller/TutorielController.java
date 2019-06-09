@@ -4,6 +4,7 @@ import tondeuse.Tondeuse;
 import tondeuse.model.Question;
 import tondeuse.model.QuestionAction;
 import tondeuse.view.FinView;
+import tondeuse.view.MenuView;
 import tondeuse.view.TutorielView;
 
 import java.awt.event.ActionEvent;
@@ -24,16 +25,36 @@ public class TutorielController implements ActionListener {
         if (e.getSource() == this.tutorielView.getjTexturedWhiteButtonYes()) {
             if (questionAction instanceof Question) {
                 Question question = (Question) questionAction;
-                if (question.getFinDuTuto())
+                if (question.getFinDuTuto()) {
+                    tutorielView.dispose();
                     new FinView(question.getFinOuInfo());
-                else {
-                    tutorielView.getTondeuse().nextEtape();
+                } else {
+                    if (question.getPasserA() != 0) tutorielView.getTondeuse().setEtape(question.getPasserA());
+                    else tutorielView.getTondeuse().nextEtape();
+                    tutorielView.reload();
+                    tutorielView.repaint();
                 }
             }
         } else if (e.getSource() == this.tutorielView.getjTexturedWhiteButtonNo()) {
-
+            if (questionAction instanceof Question) {
+                Question question = (Question) questionAction;
+                if (!question.getFinDuTuto()) {
+                    tutorielView.dispose();
+                    new FinView(question.getFinOuInfo());
+                } else {
+                    if (question.getPasserA() != 0) tutorielView.getTondeuse().setEtape(question.getPasserA());
+                    else tutorielView.getTondeuse().nextEtape();
+                    tutorielView.reload();
+                    tutorielView.repaint();
+                }
+            }
         } else if (e.getSource() == this.tutorielView.getjTexturedButtonAction()) {
-
+            tutorielView.getTondeuse().nextEtape();
+            tutorielView.reload();
+            tutorielView.repaint();
+        } else if (e.getSource() == this.tutorielView.getjButtonClose()) {
+            tutorielView.dispose();
+            new MenuView();
         }
     }
 }

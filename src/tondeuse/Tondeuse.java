@@ -23,4 +23,8 @@ public class Tondeuse {
   public Tutoriel getTutoriel() {
     return tutoriel;
   }
+
+  public void setEtape(int passerA) {
+    this.etape = passerA;
+  }
 }

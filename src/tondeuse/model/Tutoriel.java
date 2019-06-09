@@ -6,6 +6,7 @@ import org.json.simple.parser.JSONParser;
 
 import java.io.FileReader;
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class Tutoriel {
 
@@ -31,19 +32,21 @@ public class Tutoriel {
       for (Object value : questions) {
         JSONObject question = (JSONObject) value;
         if (question.get("passerA") != null)
-          list.add(Integer.parseInt(question.get("position").toString()) - 1, new Question(question.get("text").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("passerA").toString())));
+          list.add(new Question(question.get("text").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()), Integer.parseInt(question.get("passerA").toString()),  Integer.parseInt(question.get("position").toString())));
         else
-          list.add(Integer.parseInt(question.get("position").toString()) - 1, new Question(question.get("text").toString(), question.get("fin").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString())));
+          list.add(new Question(question.get("text").toString(), question.get("fin").toString(), Boolean.parseBoolean(question.get("finDuTuto").toString()),  Integer.parseInt(question.get("position").toString())));
       }
 
       JSONArray actions = (JSONArray) jsonObject.get("actions");
       for (Object o : actions) {
         JSONObject action = (JSONObject) o;
-        list.add(Integer.parseInt(action.get("position").toString()) - 1, new Action(action.get("text").toString(), action.get("info").toString()));
+        list.add(new Action(action.get("text").toString(), action.get("info").toString(),  Integer.parseInt(action.get("position").toString())));
       }
     } catch (Exception e) {
       e.printStackTrace();
     }
+
+    Collections.sort(this.list);
   }
 
   public QuestionAction getActionOrQuestion(int etape){

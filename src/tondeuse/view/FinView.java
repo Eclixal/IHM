@@ -1,6 +1,7 @@
 package tondeuse.view;
 
 import tondeuse.button.JTexturedButton;
+import tondeuse.controller.FinController;
 
 import javax.swing.*;
 import java.awt.*;
@@ -36,6 +37,8 @@ public class FinView extends JFrame {
         this.jLabelSuccess = new JLabel("Félicitations, vous avez fini le tutoriel !");
         this.jButtonMenu = new JTexturedButton("Retour au menu", "../image/button.png", "../image/buttonhover.png");
         this.jButtonLeave = new JTexturedButton("Quitter", "../image/button.png", "../image/buttonhover.png");
+        this.jButtonMenu.addActionListener(new FinController(this));
+        this.jButtonLeave.addActionListener(new FinController(this));
 
         this.jLabelMessage.setFont(new Font("Segoe UI", Font.PLAIN, 20));
         this.jLabelMessage.setForeground(Color.decode("#707070"));
@@ -56,4 +59,11 @@ public class FinView extends JFrame {
         this.setVisible(true);
     }
 
+    public JTexturedButton getjButtonMenu() {
+        return jButtonMenu;
+    }
+
+    public JTexturedButton getjButtonLeave() {
+        return jButtonLeave;
+    }
 }
