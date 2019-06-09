@@ -17,7 +17,7 @@ public class Tondeuse {
   }
 
   public int getEtape() {
-    return etape;
+    return this.etape;
   }
 
   public Tutoriel getTutoriel() {

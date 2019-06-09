@@ -57,4 +57,8 @@ public class Tutoriel {
 
     return temp;
   }
+
+  public ArrayList<QuestionAction> getList() {
+    return this.list;
+  }
 }

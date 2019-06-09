@@ -49,7 +49,7 @@ public class TutorielView extends JFrame {
 
         this.jProgressBar = new JProgressBar();
         this.jProgressBar.setBounds((this.getWidth()-500)/2, 20, 500, 20);
-        this.jProgressBar.setIndeterminate(true);
+      //  this.jProgressBar.setIndeterminate(true);
 
         this.jLabelEtape = new JLabel("Préparation");
         this.jLabelEtape.setForeground(Color.decode("#707070"));
@@ -84,6 +84,8 @@ public class TutorielView extends JFrame {
 
             this.add(this.jTexturedButtonAction);
         }
+
+        this.jProgressBar.setValue((int)((tondeuse.getEtape()+1) * 20)); //this.tondeuse.getTutoriel().getList().size());
 
         this.add(this.jButtonClose);
         this.add(this.jProgressBar);
@@ -135,6 +137,7 @@ public class TutorielView extends JFrame {
                 this.add(this.jTexturedButtonAction);
             }
         }
+        this.jProgressBar.setValue((int)((tondeuse.getEtape()+1) * 20));
     }
 
     public JTexturedWhiteButton getjTexturedWhiteButtonYes() {
