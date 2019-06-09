@@ -8,8 +8,9 @@ public abstract class QuestionAction implements Comparable<QuestionAction> {
   public QuestionAction(String text, String finOuInfo, int position) {
     if((text != null) && (finOuInfo != null)) {
       this.text = text;
-      this.finOuInfo = finOuInfo; }
-      this.position = position;
+      this.finOuInfo = finOuInfo;
+    }
+    this.position = position;
   }
 
   public QuestionAction(String text, int position) {
@@ -17,6 +18,7 @@ public abstract class QuestionAction implements Comparable<QuestionAction> {
       this.text = text;
       this.position = position;
     }
+    this.finOuInfo = null;
   }
 
   public int getPosition() {
