@@ -16,6 +16,8 @@ public class MenuView extends JFrame {
   private JLabel jLabel;
   private JButton tondeuse;
   private JSplitPane split;
+  private JButton quitter;
+  private JButton retour;
 
   public MenuView() {
     this.setTitle("Tondeuse");
@@ -63,10 +65,12 @@ public class MenuView extends JFrame {
     tutoriels.setPreferredSize(new Dimension(150,35));
     JButton parametres = new JButton("Paramètres");
     parametres.setPreferredSize(new Dimension(150,35));
-    JButton retour = new JButton("Retour");
-    retour.setPreferredSize(new Dimension(150,35));
-    JButton quitter = new JButton("Quitter");
-    quitter.setPreferredSize(new Dimension(150,35));
+    this.retour = new JButton("Retour");
+    this.retour.setPreferredSize(new Dimension(150,35));
+    this.retour.addActionListener(new MenuController(this));
+    this.quitter = new JButton("Quitter");
+    this.quitter.setPreferredSize(new Dimension(150,35));
+    this.quitter.addActionListener(new MenuController(this));
     JPanel panel1 = new JPanel();
     FlowLayout flow1 = new FlowLayout();
     panel1.setLayout(flow1);
@@ -103,5 +107,13 @@ public class MenuView extends JFrame {
 
   public JSplitPane getSplit(){
     return this.split;
+  }
+
+  public JButton getQuitterButton() {
+    return this.quitter;
+  }
+
+  public JButton getRetourButton() {
+    return this.retour;
   }
 }

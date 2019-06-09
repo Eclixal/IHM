@@ -22,7 +22,13 @@ public class MenuController implements ActionListener{
         this.menu.getSplit().setVisible(false);
       }
     }
-    else{
+    else if(e.getSource() == this.menu.getQuitterButton()){
+      System.exit(0);
+    }
+    else if(e.getSource() == this.menu.getRetourButton()){
+      if(this.menu.getSplit().isVisible()) this.menu.getSplit().setVisible(false);
+    }
+    else {
       this.menu.dispose();
       new TutorielView(new Tondeuse());
     }

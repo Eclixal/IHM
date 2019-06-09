@@ -21,7 +21,7 @@
            "finDuTuto": false
          },
          { "position": "13",
-           "text": "Le bac est-il plein ?",
+           "text": "Reste t-il de la place dans le bac ?",
            "finDuTuto": false,
            "passerA": "9"
          },
