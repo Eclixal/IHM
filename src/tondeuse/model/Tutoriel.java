@@ -16,7 +16,7 @@ public class Tutoriel {
     if(fileName != null)
       this.fileName = fileName;
 
-    this.list = new ArrayList<>();
+    this.list = new ArrayList<QuestionAction>(30);
     this.configure(this.fileName);
   }
 
